@@ -2,7 +2,7 @@
 server:
   servlet:
     context-path: /tour-api
-  port: 8181 #el puerto 8080 esta ocupado
+  port: 8080 #el puerto 8080 esta ocupado ami me funciona con el 8181
 
 spring:
   # Dev is active by default. This value can be overwritten by java arg param
