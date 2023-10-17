@@ -17,10 +17,12 @@ spring:
 
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:postgresql://localhost:5432/tour-hero
+   #url: jdbc:postgresql://localhost:5432/tour-hero #modificar aqui
+   #url: jdbc:postgresql://postgres:BzYquH9ZzxLqmfpZc4cd@containers-us-west-209.railway.app:6767/railway
+    url: jdbc:postgresql://containers-us-west-209.railway.app:6767/railway
     driver-class-name: org.postgresql.Driver
     username: postgres
-    password: p05gr35
+    password: BzYquH9ZzxLqmfpZc4cd #p05gr35
     hikari:
       idle-timeout: 10000
       maximum-pool-size: 5
