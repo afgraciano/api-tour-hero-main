@@ -1,10 +1,8 @@
 package co.edu.udea.api.model;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "heroes")
@@ -12,6 +10,7 @@ public class Hero {
 
     @Id
     @Column(name = "id")
+    @GeneratedValue(strategy= GenerationType.IDENTITY) 
     private Integer id;
 
     @Column(name = "name")
