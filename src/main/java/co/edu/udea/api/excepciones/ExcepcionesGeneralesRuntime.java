@@ -10,7 +10,6 @@ public class ExcepcionesGeneralesRuntime extends RuntimeException {
     private String message;
     private String translationKey;
 
-
     public ExcepcionesGeneralesRuntime(String message) {
         super(message);
         this.message = message;
@@ -21,13 +20,11 @@ public class ExcepcionesGeneralesRuntime extends RuntimeException {
         this.message = message;
     }
 
-
     public ExcepcionesGeneralesRuntime(String message, String translationKey) {
         super(message);
         this.message = message;
         this.translationKey = translationKey;
     }
-
 
     public String getTranslationKey() {
         return translationKey;
