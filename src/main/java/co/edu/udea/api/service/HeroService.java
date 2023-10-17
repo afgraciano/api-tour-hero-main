@@ -48,6 +48,14 @@ public class HeroService {
         heroRepository.deleteById(id);
     }
 
+    public void actualizarHeroe(Hero hero){
+        heroRepository.findById(hero.getId()).ifPresent(hero1 -> {
+            hero1.setName(hero.getName());
+            heroRepository.save(hero1);
+        });
+    }
+
+
 
 
 

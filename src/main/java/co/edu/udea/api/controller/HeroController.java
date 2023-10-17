@@ -57,6 +57,19 @@ public class HeroController {
         this.heroService.borrarHeroe(id);
     }
 
+    @PutMapping
+    @ApiOperation(value = "Actualizar Heroe",  response = Hero.class)
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Heroe Actualizado"),
+            @ApiResponse(code = 400, message = "La petición es invalida"),
+            @ApiResponse(code = 500, message = "Error interno procesando la respuesta")})
+    public void updateHero(@RequestBody Hero hero){
+        this.heroService.actualizarHeroe(hero);
+    }
+
+
+
+    
 
 
 }
