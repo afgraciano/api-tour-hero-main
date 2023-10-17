@@ -67,9 +67,17 @@ public class HeroController {
         this.heroService.actualizarHeroe(hero);
     }
 
+    @GetMapping("/")
+    @ApiOperation(value = "Mostrar  Busqueda",  response = Hero.class)
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Heroe encontrado"),
+            @ApiResponse(code = 400, message = "La petición es invalida"),
+            @ApiResponse(code = 500, message = "Error interno procesando la respuesta")})
+    public List<Hero> searchHeroes(@RequestParam("name") String term){
+        System.out.println(term+"  esto es el termino");
+        return heroService.buscarHeroe(term);
+    }
 
-
-    
 
 
 }

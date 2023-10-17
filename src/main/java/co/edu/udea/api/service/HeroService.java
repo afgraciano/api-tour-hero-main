@@ -55,7 +55,9 @@ public class HeroService {
         });
     }
 
-
+    public List<Hero> buscarHeroe(String term){
+        return heroRepository.findByNameContaining(term);
+    }
 
 
 
