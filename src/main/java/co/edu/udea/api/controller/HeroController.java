@@ -39,7 +39,7 @@ public class HeroController {
     @GetMapping()
     @ApiOperation(value = "Lista de Heroes",  response = Hero.class)
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Heroe encontrado"),
+            @ApiResponse(code = 200, message = "Heroes Encontrados"),
             @ApiResponse(code = 400, message = "La petición es invalida"),
             @ApiResponse(code = 500, message = "Error interno procesando la respuesta")})
    /* public List<Hero> getHeroes(){return heroService.listaHeroe(); }*/
@@ -70,7 +70,7 @@ public class HeroController {
     @GetMapping("/")
     @ApiOperation(value = "Mostrar  Busqueda",  response = Hero.class)
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Heroe encontrado"),
+            @ApiResponse(code = 200, message = "Heroe Encontrado"),
             @ApiResponse(code = 400, message = "La petición es invalida"),
             @ApiResponse(code = 500, message = "Error interno procesando la respuesta")})
     public List<Hero> searchHeroes(@RequestParam("name") String term){
@@ -78,6 +78,16 @@ public class HeroController {
         return heroService.buscarHeroe(term);
     }
 
+
+    @PostMapping
+    @ApiOperation(value = "Adicionar Heroe",  response = Hero.class)
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Heroe Adicionado"),
+            @ApiResponse(code = 400, message = "La petición es invalida"),
+            @ApiResponse(code = 500, message = "Error interno procesando la respuesta")})
+    public Hero addHero(@RequestBody Hero hero){
+        return this.heroService.adicionarHeroe(hero);
+    }
 
 
 }

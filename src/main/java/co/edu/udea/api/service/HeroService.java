@@ -59,6 +59,8 @@ public class HeroService {
         return heroRepository.findByNameContaining(term);
     }
 
-
+    public Hero adicionarHeroe(Hero hero){
+        return heroRepository.save(hero);
+    }
 
 }
