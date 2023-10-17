@@ -47,4 +47,16 @@ public class HeroController {
         return ResponseEntity.ok(heroService.listaHeroe());
     }
 
+    @DeleteMapping("{id}")
+    @ApiOperation(value = "Borrar Heroe",  response = Hero.class)
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Heroe Eliminado"),
+            @ApiResponse(code = 400, message = "La petición es invalida"),
+            @ApiResponse(code = 500, message = "Error interno procesando la respuesta")})
+    public void deleteHero(@PathVariable Integer id){
+        this.heroService.borrarHeroe(id);
+    }
+
+
+
 }

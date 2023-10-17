@@ -39,5 +39,16 @@ public class HeroService {
         return heroRepository.findAll();
     }
 
+    //agrego borrar, actualizar, buscar, adicionar heroe
+    
+    public void borrarHeroe(Integer id) {
+        if (!heroRepository.existsById(id)) {
+            throw new ExcepcionesNegocio("El héroe no existe");
+        }
+        heroRepository.deleteById(id);
+    }
+
+
+
 
 }
